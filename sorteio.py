@@ -15,7 +15,6 @@ while True:
     if not keyboard.is_pressed('esc'):
         opcao = int(input("1) DIGITAR NUMERO TOTAL DE PARTICIPANTES\n2) SORTEAR UM NUMERO\n3) Sair \n\n"))
         os.system('clear')
-        print(opcao)
         if opcao == 1:
             participantes = int(input("\nQuantas participantes? "))
             os.system('clear')
