@@ -33,7 +33,7 @@ while True:
             os.system('clear')
         if opcao == 2:
             try:
-                print('NÚMERO SORTEADO: ', sorteio(participantes))
+                print('NUMERO SORTEADO: ', sorteio(participantes))
                 numeros_sorteados(lista_sorteados)
             except NameError:
                 print("\nDigite o TOTAL DE PARTICIPANTES primeiro\n\n")
