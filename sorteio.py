@@ -19,7 +19,7 @@ def numeros_sorteados(lista_sorteados):
     #lista_sorteados.sort()
     print(lista_sorteados)
     print('=================\n')
-    print('Total de números sorteados: ', len(lista_sorteados))
+    print('Total de numeros sorteados: ', len(lista_sorteados))
     print('=================\n')
 
 participantes = int(input("\nQuantas participantes? "))
