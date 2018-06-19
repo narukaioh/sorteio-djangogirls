@@ -1,43 +1,38 @@
-from random import randint
-import keyboard
+import random
 import os
-
-lista_sorteados = []
-
-def sorteio(total):
-    sorteado = randint(1, total)
-    while sorteado in lista_sorteados:
-        sorteado = randint(1, total)
-    lista_sorteados.append(sorteado)
-    if len(lista_sorteados) == total:
-        print('Acabou o sorteio!')
-    return sorteado
 
 def numeros_sorteados(lista_sorteados):
     print('\n=================')
     print("NUMEROS QUE JA FORAM SORTEADOS: \n")
-    #lista_sorteados.sort()
     print(lista_sorteados)
     print('=================\n')
     print('Total de numeros sorteados: ', len(lista_sorteados))
     print('=================\n')
 
-participantes = int(input("\nQuantas participantes? "))
-
-while True:
-    if not keyboard.is_pressed('esc'):
+def main():
+    sorteados = []
+    p = int(input("Numero de participantes? "))
+    lista = list(range(1,p+1))
+    print(lista)
+    while True:
         opcao = int(input("1) ALTERAR NUMERO TOTAL DE PARTICIPANTES\n2) SORTEAR UM NUMERO\n3) Sair \n\n"))
         os.system('clear')
         if opcao == 1:
-            participantes = int(input("\nQuantas participantes? "))
+            p = int(input("\nQuantas participantes? "))
             os.system('clear')
         if opcao == 2:
-            try:
-                print('NUMERO SORTEADO: ', sorteio(participantes))
-                numeros_sorteados(lista_sorteados)
-            except NameError:
-                print("\nDigite o TOTAL DE PARTICIPANTES primeiro\n\n")
+            if(len(lista) > 0):
+                s = random.SystemRandom().choice(lista)
+                sorteados.append(s)
+                lista.remove(s)
+                print('NUMERO SORTEADO: ', s)
+                if len(sorteados) == p:
+                    print("Todos números já sorteados :)")
+                    numeros_sorteados(sorteados)
+                    break
+            numeros_sorteados(sorteados)
         if opcao == 3:
             break
-    else:
-        break
+
+if __name__ == '__main__':
+    main()
