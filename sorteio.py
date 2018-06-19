@@ -13,7 +13,6 @@ def main():
     sorteados = []
     p = int(input("Numero de participantes? "))
     lista = list(range(1,p+1))
-    print(lista)
     while True:
         opcao = int(input("1) ALTERAR NUMERO TOTAL DE PARTICIPANTES\n2) SORTEAR UM NUMERO\n3) Sair \n\n"))
         os.system('clear')
@@ -28,8 +27,6 @@ def main():
                 print('NUMERO SORTEADO: ', s)
                 if len(sorteados) == p:
                     print("Todos números já sorteados :)")
-                    numeros_sorteados(sorteados)
-                    break
             numeros_sorteados(sorteados)
         if opcao == 3:
             break
